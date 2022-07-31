@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Jul 30 20:13:37 2022
+# Make data base, printed on Sun Jul 31 14:18:12 2022
 
 # Variables
 
@@ -25,7 +25,7 @@ TMPDIR = C:\Users\ANDATO~1\AppData\Local\Temp
 # environment
 LOCALAPPDATA = C:\Users\andatoshiki\AppData\Local
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-78ac9447-9961-46e3-8e55-790b6f66ffd7-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-91e4d0c3-f6e7-4e70-9473-e7c0f728ad4c-sock
 # environment
 VSCODE_CWD = D:\Alex\Resources\GitHub\e5subbot
 # environment
@@ -49,7 +49,7 @@ DOKANLIBRARY1_LIBRARYPATH_X64 = D:\Alex\Apps\Doken Library\lib\
 # environment
 ACLOCAL_PATH = D:\Alex\Apps\Git\mingw64\share\aclocal;D:\Alex\Apps\Git\usr\share\aclocal
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_13088_NFPQANDJFSWEHPMJ
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_21204_VGWZTPZCIQZMGRIE
 # environment
 ORIGINAL_TEMP = C:/Users/ANDATO~1/AppData/Local/Temp
 # environment
@@ -123,7 +123,7 @@ MAKEFILE_LIST := Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 13088
+VSCODE_PID = 21204
 # automatic
 ?D = $(patsubst %/,%,$(patsubst %\,%,$(dir $?)))
 # environment
@@ -165,7 +165,8 @@ MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = D:\Alex\Apps\Go\bin;C:\Users\andatoshiki\bin;D:\Alex\Apps\Git\mingw64\bin;D:\Alex\Apps\Git\usr\local\bin;D:\Alex\Apps\Git\usr\bin;D:\Alex\Apps\Git\usr\bin;D:\Alex\Apps\Git\mingw64\bin;D:\Alex\Apps\Git\usr\bin;C:\Users\andatoshiki\bin;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Java\jdk1.8.0_71\bin;C:\ProgramData\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;D:\Alex\Apps\Git\cmd;D:\Alex\Apps\Hugo;C:\Program Files\Common Files\Autodesk Shared;C:\Program Files\Microsoft SQL Server\120\Tools\Binn;D:\Alex\Apps\VSCodium\bin;D:\Alex\Apps\TexLive\texlive\2021\bin\win32;C:\Program Files\Wolfram Research\WolframScript;D:\Alex\Apps\PanDocs;C:\Program Files\dotnet;D:\Alex\Apps\Pandoc;D:\Alex\Apps\RClone;D:\Alex\Resources\GitHub\GoWorks\bin;D:\Alex\Resources\GitHub\GoWorks\bin;D:\Alex\Apps\GnuWin32\GetGnuWin32\bin;D:\Alex\Apps\gcc\bin;D:\Alex\Apps\gcc\bin;D:\Alex\Apps\yarn\bin;C:\Users\andatoshiki\AppData\Roaming\npm;D:\Alex\Resources\GitHub\YoutubeDL-Material\node_modules\@angular\cli;C:\ProgramData\chocolatey\bin;D:\Alex\Apps\nodejs;D:\Alex\Apps\nodejs;D:\Alex\blast-2.12.0+\bin;D:\Alex\Apps\Python\Scripts;D:\Alex\Apps\Python;C:\Users\Alex Shao\AppData\Local\Microsoft\WindowsApps;D:\Alex\Apps\PyCharm 2020.3.3\bin;C:\Users\Alex Shao\AppData\Local\GitHubDesktop\bin;D:\Alex\Apps\Hugo;D:\Alex\Apps\MikTeX\miktex\bin\x64;D:\Alex\Apps\Markdown Monster;C:\Users\Alex Shao\AppData\Local\atom\bin;D:\Alex\Apps\GitHubDesktopPortable\App\GitHubDesktop\bin;C:\Users\Alex Shao\AppData\Roaming\npm;C:\Users\Alex Shao\AppData\Local\Programs\oh-my-posh\bin;C:\Users\Alex Shao\AppData\Local\Keybase;D:\Alex\Resources\GitHub\GoWorks\bin;D:\Alex\Apps\GnuWin32\GetGnuWin32\bin;D:\Alex\Apps\gcc\bin;D:\Alex\Apps\aria2;D:\Alex\Apps\odupload;C:\Users\andatoshiki\AppData\Local\Yarn\bin;D:\Alex\Resources\GitHub\YoutubeDL-Material\node_modules\@angular\cli;D:\Alex\Apps\VsCode;C:\Users\andatoshiki\AppData\Roaming\npm;D:\Alex\Apps\dotnet-sdk;D:\Alex\Apps\Git\usr\bin\vendor_perl;D:\Alex\Apps\Git\usr\bin\core_perl
+PATH = D:\Alex\Apps\Go\bin;C:\Users\andatoshiki\bin;D:\Alex\Apps\Git\mingw64\bin;D:\Alex\Apps\Git\usr\local\bin;D:\Alex\Apps\Git\usr\bin;D:\Alex\Apps\Git\usr\bin;D:\Alex\Apps\Git\mingw64\bin;D:\Alex\Apps\Git\usr\bin;C:\Users\andatoshiki\bin;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Java\jdk1.8.0_71\bin;C:\ProgramData\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;D:\Alex\Apps\Git\cmd;D:\Alex\Apps\Hugo;C:\Program Files\Common Files\Autodesk Shared;C:\Program Files\Microsoft SQL Server\120\Tools\Binn;D:\Alex\Apps\VSCodium\bin;D:\Alex\Apps\TexLive\texlive\2021\bin\win32;C:\Program Files\Wolfram Research\WolframScript;D:\Alex\Apps\PanDocs;C:\Program Files\dotnet;D:\Alex\Apps\Pandoc;D:\Alex\Apps\RClone;D:\Alex\Resources\GitHub\GoWorks\bin;D:\Alex\Resources\GitHub\GoWorks\bin;D:\Alex\Apps\GnuWin32\GetGnuWin32\bin;D:\Alex\Apps\gcc\bin;D:\Alex\Apps\gcc\bin;D:\Alex\Apps\yarn\bin;C:\Users\andatoshiki\AppData\Roaming\npm;D:\Alex\Resources\GitHub\YoutubeDL-Material\node_modules\@angular\cli;C:\ProgramData\chocolatey\bin;D:\Alex\Apps\nodejs;D:\Alex\Apps\nodejs;D:\Alex\blast-2.12.0+\bin;D:\Alex\Apps\Python\Scripts;D:\Alex\Apps\Python;C:\Users\Alex Shao\AppData\Local\Microsoft\WindowsApps;D:\Alex\Apps\PyCharm 2020.3.3\bin;C:\Users\Alex Shao\AppData\Local\GitHubDesktop\bin;D:\Alex\Apps\Hugo;D:\Alex\Apps\MikTeX\miktex\bin\x64;D:\Alex\Apps\Markdown Monster;C:\Users\Alex Shao\AppData\Local\atom\bin;D:\Alex\Apps\GitHubDesktopPortable\App\GitHubDesktop\bin;C:\Users\Alex Shao\AppData\Roaming\npm;C:\Users\Alex Shao\AppData\Local\Programs\oh-my-posh\bin;C:\Users\Alex Shao\AppData\Local\Keybase;D:\Alex\Resources\GitHub\GoWorks\bin;D:\Alex\Apps\GnuWin32\GetGnuWin32\bin;D:\Alex\Apps\gcc\bin;D:\Alex\Apps\aria2;D:\Alex\Apps\odupload;C:\Users\andatoshiki\AppData\Local\Yarn\bin;D:\Alex\Resources\GitHub\YoutubeDL-Material\node_modules\@angular\cli;D:\Alex\Apps\VsCode;C:\Users\andatoshiki\AppData\Roaming\npm;D:\Alex\Apps\dotnet-sdk;D:\Alex\Apps\Git\usr\bin\vendor_perl;D:\Alex\Apps\Git\usr\bin\ 
+core_perl
 # environment
 ZES_ENABLE_SYSMAN = 1
 # environment
@@ -190,7 +191,8 @@ LOGONSERVER = \\DESKTOP-43RSN5L
 VSCODE_LOG_NATIVE = false
 # environment
 USERNAME = Anda Toshiki
-# environment
+# e 
+nvironment
 TERM_PROGRAM = mintty
 # environment
 COMMONPROGRAMFILES = C:\Program Files (x86)\Common Files
@@ -210,7 +212,8 @@ CONFIG_SITE = D:/Alex/Apps/Git/etc/config.site
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
 USERDOMAIN = DESKTOP-43RSN5L
-# 'override' directive
+# 'override' dir 
+ective
 GNUMAKEFLAGS := 
 # environment
 OS = Windows_NT
@@ -233,7 +236,8 @@ PROGRAMFILES(X86) = C:\Program Files (x86)
 # environment
 USERDOMAIN_ROAMINGPROFILE = DESKTOP-43RSN5L
 # environment
-NUMBER_OF_PROCESSORS = 8
+NUMBER_O 
+F_PROCESSORS = 8
 # environment
 PUBLIC = C:\Users\Public
 # environment
@@ -255,7 +259,8 @@ MSYSTEM = MINGW64
 # environment
 HOME = C:\Users\andatoshiki
 # environment
-COMMONPROGRAMFILES(X86) = C:\Program Files (x86)\Common Files
+COMMON 
+PROGRAMFILES(X86) = C:\Program Files (x86)\Common Files
 # environment
 EXEPATH = D:\Alex\Apps\Git
 # environment
@@ -273,7 +278,8 @@ ADSK_3DSMAX_X64_2020 = D:\Alex\Apps\Autodesk\3ds Max 2020\
 # default
 .RECIPEPREFIX := 
 # environment
-ORIGINAL_TMP = C:/Users/ANDATO~1/AppData/Local/Temp
+ORIGINAL_TMP = C:/Users/ANDATO~1/AppData/L 
+ocal/Temp
 # automatic
 <F = $(notdir $<)
 # environment
@@ -303,9 +309,9 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 142 Stepping 12, GenuineIntel
 
 # Directories
 
-# . (key d:/Alex/Resources/GitHub/e5subbot, mtime 1659183216): 25 files, no impossibilities.
+# . (key d:/Alex/Resources/GitHub/e5subbot, mtime 1659248066): 24 files, no impossibilities.
 
-# 25 files, no impossibilities in 1 directories.
+# 24 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -313,7 +319,8 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 142 Stepping 12, GenuineIntel
 
 # Files
 
-# Not a target:
+# Not 
+ a target:
 Makefile:
 #  Implicit rule search has been done.
 #  Last modified 2022-07-30 20:04:46
@@ -335,7 +342,8 @@ all:
 
 build:
 #  Phony target (prerequisite of .PHONY).
-#  Implicit rule search has not been done.
+#  Implicit rule search has not been do 
+ne.
 #  File does not exist.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 3):
@@ -354,12 +362,13 @@ build:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 30 / storage = 233 B / avg = 7 B
-# current buf: size = 8174 B / used = 233 B / count = 30 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 29 / storage = 213 
+ B / avg = 7 B
+# current buf: size = 8174 B / used = 213 B / count = 29 / avg = 7 B
 
-# strcache performance: lookups = 37 / hit rate = 18%
+# strcache performance: lookups = 36 / hit rate = 19%
 # hash-table stats:
-# Load=30/8192=0%, Rehash=0, Collisions=0/37=0%
-# Finished Make data base on Sat Jul 30 20:13:37 2022
+# Load=29/8192=0%, Rehash=0, Collisions=0/36=0%
+# Finished Make data base on Sun Jul 31 14:18:12 2022
 
  
