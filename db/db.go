@@ -2,9 +2,9 @@ package db
 
 import (
 	"fmt"
+	"github.com/andatoshiki/sqlite"
 	"github.com/andatoshiki/toshiki-e5subot/config"
 	"github.com/andatoshiki/toshiki-e5subot/model"
-	"github.com/andatoshiki/sqlite"
 	"go.uber.org/zap"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
