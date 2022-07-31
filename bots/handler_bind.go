@@ -16,7 +16,7 @@ import (
 
 func bBind(m *tb.Message) {
 	bot.Send(m.Chat,
-		fmt.Sprintf("👉 应用注册： [点击直达](%s)", microsoft.GetRegURL()),
+		"👉应用注册: [查看教程](https://github.com/andatoshiki/toshiki-e5subot)",
 		tb.ModeMarkdown,
 	)
 
@@ -43,7 +43,7 @@ func bBind1(m *tb.Message) {
 	id := tmp[0]
 	secret := tmp[1]
 	bot.Send(m.Chat,
-		fmt.Sprintf("👉 授权账户： [查看教程](%s)", microsoft.GetAuthURL(id)),
+		fmt.Sprintf("👉 授权账户： [点击直达](%s)", microsoft.GetAuthURL(id)),
 		tb.ModeMarkdown,
 	)
 
