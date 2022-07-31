@@ -14,8 +14,7 @@ const (
 
 func GetAuthURL(clientID string) string {
 	return fmt.Sprintf(
-		"https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=%s&response_type=code&redirect_uri=%s&response_mode=query&scope=%s",
-		clientID,
+		"https://telegra.ph/%E4%BF%8A%E6%A8%B9%E3%81%AEE5subot%E6%95%99%E7%A8%8B-07-31",
 		url.QueryEscape(redirect),
 		url.QueryEscape(scope),
 	)
