@@ -1,0 +1,4 @@
+make: Entering directory 'd:/Alex/Resources/GitHub/e5subbot'
+goreleaser release --skip-publish --snapshot --rm-dist
+make: Leaving directory 'd:/Alex/Resources/GitHub/e5subbot'
+ 
