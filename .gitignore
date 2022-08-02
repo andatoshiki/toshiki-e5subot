@@ -19,6 +19,10 @@ config.yml
 *.db
 #Goreleaser
 /dist
+
+#Vscode
+/.vscode
+
 #Logs
 /log
 /.idea
