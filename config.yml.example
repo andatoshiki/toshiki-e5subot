@@ -1,15 +1,13 @@
-bot_token: YOUR_BOT_TOKEN
+bot_token: 5461182481:AAF7-sGjsfW7Susw_l2NGFHjcpvCMD-wmSgYOUR_BOT_TOKEN
 # socks5: 127.0.0.1:1080
-bindmax: 999
+bindmax: 5
 goroutine: 20
-admin: 111,222,333
-errlimit: 999
+admin: 2033686966
+errlimit: 15
 notice: |-
-  aaa
-  bbb
-  ccc
+  @andatoshiki_e5subot是一只可可爱爱的微软E5 Developer开发者帐号续订机器人哦~你可以随意调戏他 他的主人是 @andatoshiki | 安田俊樹! 欢迎来找主人聊天哦 他也同样可可爱爱 (是小萝莉:P)
 cron: "1 */1 * * *"
-db: sqlite
+# db: sqlite
 table: users
 # mysql:
 #  host: 127.0.0.1
