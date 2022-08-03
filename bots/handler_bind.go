@@ -48,7 +48,7 @@ func bBind1(m *tb.Message) {
 	)
 
 	bot.Send(m.Chat,
-		"⚠ 请回复`http://localhost/......空格)别名`的格式哦~ (用于管理)",
+		"⚠ 请回复`http://localhost/......(空格)别名`的格式哦~ (用于管理)",
 		&tb.SendOptions{ParseMode: tb.ModeMarkdown,
 			ReplyMarkup: &tb.ReplyMarkup{ForceReply: true},
 		},
