@@ -13,6 +13,7 @@ const (
 	WelcomeContent string = "欢迎光临俊樹のE5subot! ヾ(≧▽≦*)o"
 	HelpContent    string = `
 	以下是常用命令哦~
+	/start 欢迎光临俊樹のE5subot
 	/my 查看已绑定账户信息
 	/bind  绑定新账户
 	/unbind 解绑账户
@@ -20,8 +21,8 @@ const (
 	/help 帮助 (你是笨蛋嘛)
 	/task 管理员手动调用一次API
 	/log 管理员获取机器人历史日志
-	开源地址: [点击直达](github.com/andatoshiki/toshiki-e5subot)
-	使用教程: [点击直达]https://telegra.ph/%E4%BF%8A%E6%A8%B9%E3%81%AEE5subot%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B-08-02
+	开源地址: github.com/andatoshiki/toshiki-e5subot
+	使用教程: shorturl.at/psuOX
 `
 )
 
