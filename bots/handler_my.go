@@ -41,14 +41,14 @@ func bMy(m *tb.Message) {
 	}
 
 	bot.Send(m.Chat,
-		fmt.Sprintf("✨ 选择一个账户查看具体信息\n\n绑定数: %d/%d", len(srv_client.GetClients(m.Chat.ID)), config.BindMaxNum),
+		fmt.Sprintf("✨ 请小客官选择一个账户查看具体信息哦\n\n绑定数: %d/%d", len(srv_client.GetClients(m.Chat.ID)), config.BindMaxNum),
 		&tb.ReplyMarkup{InlineKeyboard: inlineKeys})
 }
 func bMyInlineBtn(c *tb.Callback) {
 	id, _ := strconv.Atoi(c.Data)
 	client, err := srv_client.GetClient(id)
 	if err != nil {
-		bot.Send(c.Message.Chat, "获取账户信息失败")
+		bot.Send(c.Message.Chat, "获取账户信息失败啦 :(")
 		return
 	}
 	bot.Send(c.Message.Chat,
@@ -70,6 +70,6 @@ func bOnText(m *tb.Message) {
 	case StatusBind2:
 		bBind2(m)
 	default:
-		bot.Send(m.Chat, "✨ 发送 /help 获取帮助嗷")
+		bot.Send(m.Chat, "✨ 你个笨蛋! 发送 /help 获取帮助哦")
 	}
 }

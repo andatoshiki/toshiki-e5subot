@@ -83,7 +83,7 @@ func adminSummary(errClients []*ErrClient, timeSpending float64) {
 	}
 	for _, admin := range config.Admins {
 		a := admin
-		msgSender.SendMessageByID(a, fmt.Sprintf("任务反馈(管理员)\n完成时间: %s\n用时: %.2fs\n结果: %d/%d\n错误账户: \n%s\n清退账户: \n%s",
+		msgSender.SendMessageByID(a, fmt.Sprintf("小主人我完成任务啦! 快夸夸我! 任务反馈(管理员)\n完成时间: %s\n用时: %.2fs\n结果: %d/%d\n错误账户: \n%s\n清退账户: \n%s",
 			time.Now().Format("2006-01-02 15:04:05"),
 			timeSpending,
 			Count-ErrCount, Count,

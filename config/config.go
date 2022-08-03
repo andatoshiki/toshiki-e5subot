@@ -10,15 +10,18 @@ import (
 
 const (
 	LogBasePath    string = "./log/"
-	WelcomeContent string = "欢迎使用E5SubBot!"
+	WelcomeContent string = "欢迎光临俊樹のE5subot! ヾ(≧▽≦*)o"
 	HelpContent    string = `
-	命令：
+	以下是常用命令哦~
 	/my 查看已绑定账户信息
 	/bind  绑定新账户
 	/unbind 解绑账户
 	/export 导出账户信息(JSON)
-	/help 帮助
-	源码及使用方法：https://github.com/andatoshiki/toshiki-e5subot
+	/help 帮助 (你是笨蛋嘛)
+	/task 管理员手动调用一次API
+	/log 管理员获取机器人历史日志
+	开源地址：github.com/andatoshiki/toshiki-e5subot
+	使用教程: https://telegra.ph/%E4%BF%8A%E6%A8%B9%E3%81%AEE5subot%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B-08-02
 `
 )
 
