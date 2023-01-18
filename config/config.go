@@ -22,7 +22,7 @@ const (
 	/task 管理员手动调用一次API
 	/log 管理员获取机器人历史日志
 	开源地址: github.com/andatoshiki/toshiki-e5subot
-	使用教程: shorturl.at/psuOX
+	使用教程: e5.toshiki.dev
 `
 )
 
