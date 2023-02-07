@@ -2,6 +2,8 @@ name: goreleaser-build
 
 on:
   push:
+    branches:
+      - master
     tags:
       - '*'
 
