@@ -12,12 +12,12 @@ COPY go.sum go.sum
 RUN go mod download
 
 COPY . .
-RUN go build -ldflags '-w -s' -o E5SubBot .
+RUN go build -ldflags '-w -s' -o toshiki-e5subot .
 
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories && \
     apk update && apk add --no-cache ca-certificates
 
-RUN mkdir build && cp E5SubBot build && mv config.yml.example build/config.yml
+RUN mkdir build && cp toshiki-e5subot build && mv config.yml.example build/config.yml
 
 FROM alpine:latest
 
@@ -25,4 +25,4 @@ RUN apk add tzdata
 COPY --from=builder /app/build /
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 
-ENTRYPOINT ["/E5SubBot"]
+ENTRYPOINT ["/toshiki-e5subot"]
