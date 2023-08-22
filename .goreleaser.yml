@@ -41,12 +41,12 @@ archives:
   #     {{- else if eq .Arch "386" }}32bit
   #     {{- else }}{{ .Arch }}{{ end }}
   - name_template: '{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}'
-    replacements:
-      darwin: Darwin
-      linux: Linux
-      windows: Windows
-      386: 32bit
-      amd64: 64bit
+    # replacements:
+    #   darwin: Darwin
+    #   linux: Linux
+    #   windows: Windows
+    #   386: 32bit
+    #   amd64: 64bit
     format_overrides:
       - goos: windows
         format: zip
