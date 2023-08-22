@@ -41,18 +41,18 @@ func bMy(m *tb.Message) {
 	}
 
 	bot.Send(m.Chat,
-		fmt.Sprintf("✨ 请小客官选择一个账户查看具体信息哦\n\n绑定数: %d/%d", len(srv_client.GetClients(m.Chat.ID)), config.BindMaxNum),
+		fmt.Sprintf("✨ Please selet an account to view the detailed information\n\nCurrently bound accounts: %d/%d", len(srv_client.GetClients(m.Chat.ID)), config.BindMaxNum),
 		&tb.ReplyMarkup{InlineKeyboard: inlineKeys})
 }
 func bMyInlineBtn(c *tb.Callback) {
 	id, _ := strconv.Atoi(c.Data)
 	client, err := srv_client.GetClient(id)
 	if err != nil {
-		bot.Send(c.Message.Chat, "获取账户信息失败啦 :(")
+		bot.Send(c.Message.Chat, "Failed to fetch account information details")
 		return
 	}
 	bot.Send(c.Message.Chat,
-		fmt.Sprintf("🔎 信息\n别名：%s\nms_id: %s\nclient_id: %s\nclient_secret: %s\n最近更新时间: %s",
+		fmt.Sprintf("🔎 Account Details\nAlias:%s\nms_id: %s\nclient_id: %s\nclient_secret: %s\nLast updated: %s",
 			client.Alias,
 			client.MsId,
 			client.ClientId,
@@ -70,6 +70,6 @@ func bOnText(m *tb.Message) {
 	case StatusBind2:
 		bBind2(m)
 	default:
-		bot.Send(m.Chat, "✨ 你个笨蛋! 发送 /help 获取帮助哦")
+		bot.Send(m.Chat, "✨ Send /help to view help information")
 	}
 }

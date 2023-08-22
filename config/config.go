@@ -1,28 +1,33 @@
 package config
 
 import (
+	"strconv"
+	"strings"
+
 	"github.com/fsnotify/fsnotify"
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
-	"strconv"
-	"strings"
 )
 
 const (
 	LogBasePath    string = "./log/"
-	WelcomeContent string = "欢迎光临俊樹のE5subot! ヾ(≧▽≦*)o"
+	WelcomeContent string = "Welcome to toshiki-e5subot!"
 	HelpContent    string = `
-	以下是常用命令哦~
-	/start 欢迎光临俊樹のE5subot
-	/my 查看已绑定账户信息
-	/bind  绑定新账户
-	/unbind 解绑账户
-	/export 导出账户信息(JSON)
-	/help 帮助 (你是笨蛋嘛)
-	/task 管理员手动调用一次API
-	/log 管理员获取机器人历史日志
-	开源地址: github.com/andatoshiki/toshiki-e5subot
-	使用教程: e5.toshiki.dev
+	🤖 Toshiki's E5Subot is a Microsoft developer E5 account renwal automation program integrated with Telegram bot APIs via calling Microsoft Graph APIs.
+
+	Below are the commonly used commands:
+
+	/start - Send welcome messages
+	/my - View bound accouts information details
+	/bind - Bind new accounts
+	/unbind - Ubind existing accounts
+	/export - Export account information details (JSON)
+	/help - Bot help guides
+	/task - Manual trigger bot for renwal API calling (admins only)
+	/log - Fetch bot historical logs for debug (admins only)
+	
+	Github: github.com/andatoshiki/toshiki-e5subot
+	Docs: note.toshiki.dev/application/toshiki-e5subot
 `
 )
 

@@ -20,8 +20,7 @@ const (
 	/_  __/__  ___ / /  (_) /__ (_) / __/ __/
 	 / / / _ \(_-</ _ \/ /  '_// / / _//__ \ 
 	/_/  \___/___/_//_/_/_/\_\/_/ /___/____/ 		
-	@andatoshiki | 安田俊樹 | www.toshiki.dev
-	@chenskiro | chenskiro | www.chenskiro.com			 
+	@andatoshiki | 安田俊樹 | www.toshiki.dev		 
 `
 )
 

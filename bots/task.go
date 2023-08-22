@@ -83,7 +83,7 @@ func adminSummary(errClients []*ErrClient, timeSpending float64) {
 	}
 	for _, admin := range config.Admins {
 		a := admin
-		msgSender.SendMessageByID(a, fmt.Sprintf("小主人我完成任务啦! 快夸夸我! 任务反馈(管理员)\n完成时间: %s\n用时: %.2fs\n结果: %d/%d\n错误账户: \n%s\n清退账户: \n%s",
+		msgSender.SendMessageByID(a, fmt.Sprintf("Task completed - Task Feedback(admins only notification)\nTime of Completion: %s\nTime taken: %.2fs\nResults: %d/%d\nAccount(s) failed: \n%s\nAccount(s) unbound: \n%s",
 			time.Now().Format("2006-01-02 15:04:05"),
 			timeSpending,
 			Count-ErrCount, Count,
@@ -111,8 +111,8 @@ func usersSummary(errClients []*ErrClient) {
 			}
 
 			unbindUsers = append(unbindUsers, errClient.TgId)
-
-			msgSender.SendMessageByID(errClient.TgId, fmt.Sprintf("您的账户因达到错误上限而被自动解绑\n后会有期!\n\n别名: %s\nclient_id: %s\nclient_secret: %s",
+					// your account has been automatically unbound because it has reached the maximum error limit of the bot
+			msgSender.SendMessageByID(errClient.TgId, fmt.Sprintf("your account has been automatically unbound because it has reached the maximum error limit of the bot\nSee you later\n\nAlias: %s\nclient_id: %s\nclient_secret: %s",
 				errClient.Alias,
 				errClient.ClientId,
 				errClient.ClientSecret,
@@ -126,7 +126,7 @@ func usersSummary(errClients []*ErrClient) {
 		signOK := len(srv_client.GetClients(errClient.TgId)) - signErr[errClient.TgId]
 
 		msgSender.SendMessageByID(errClient.TgId,
-			fmt.Sprintf("任务反馈\n时间: %s\n结果:%d/%d",
+			fmt.Sprintf("Task feedback\nTime taken: %s\nSucceeded accounts:%d/%d",
 				time.Now().Format("2006-01-02 15:04:05"),
 				signOK,
 				signErr[errClient.TgId]+signOK,
@@ -140,11 +140,11 @@ func opErrorSign(errClient *ErrClient) {
 	errorTimes[errClient.ID]++
 	signErr[errClient.TgId]++
 
-	UnBindBtn := tb.InlineButton{Unique: "un" + errClient.MsId, Text: "点击解绑", Data: strconv.Itoa(errClient.ID)}
+	UnBindBtn := tb.InlineButton{Unique: "un" + errClient.MsId, Text: "Click to unbind", Data: strconv.Itoa(errClient.ID)}
 	bot.Handle(&UnBindBtn, bUnBindInlineBtn)
 
 	msgSender.SendMessageByID(errClient.TgId,
-		fmt.Sprintf("您的帐户 %s 在执行时出现了错误\n您可以选择解绑该用户\n错误: %s",
+		fmt.Sprintf("Your accounts %s was found to encounter an operational error during API calling\nYou can choose to unbind or unlink the account profile\nError: %s",
 			errClient.Alias, errClient.Err),
 		&tb.ReplyMarkup{InlineKeyboard: [][]tb.InlineButton{{UnBindBtn}}},
 	)
