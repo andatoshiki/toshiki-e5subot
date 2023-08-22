@@ -3,7 +3,7 @@ name: goreleaser-build
 on:
   push:
     branches:
-      - master
+      - en-us
     tags:
       - '*'
 
