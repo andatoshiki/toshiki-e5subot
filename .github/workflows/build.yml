@@ -3,6 +3,7 @@ name: goreleaser-build
 on:
   push:
     branches:
+      - en-us
       - master
     tags:
       - '*'
@@ -21,12 +22,12 @@ jobs:
         uses: actions/setup-go@v3
       -
         name: Run GoReleaser
-        uses: goreleaser/goreleaser-action@v3
+        uses: goreleaser/goreleaser-action@v2
         with:
           # either 'goreleaser' (default) or 'goreleaser-pro'
           distribution: goreleaser
           version: latest
-          args: release --rm-dist
+          args: release --clean
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
           # Your GoReleaser Pro key, if you are using the 'goreleaser-pro' distribution
