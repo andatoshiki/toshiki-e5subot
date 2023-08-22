@@ -28,7 +28,7 @@ func bExport(m *tb.Message) {
 	var exports []*ClientExport
 	data := srv_client.GetClients(m.Chat.ID)
 	if len(data) == 0 {
-		bot.Send(m.Chat, "⚠ 您还没有绑定过账户呢! >_<")
+		bot.Send(m.Chat, "⚠ You haven't bind any accounts yet")
 		return
 	}
 	for _, u := range data {
@@ -45,14 +45,14 @@ func bExport(m *tb.Message) {
 	if err != nil {
 		zap.S().Errorw("failed to marshal json",
 			"error", err)
-		bot.Send(m.Chat, fmt.Sprintf("⚠ 呜呜获取JSON失败啦! >_<\n\nERROR: %s", err.Error()))
+		bot.Send(m.Chat, fmt.Sprintf("⚠ Failed to fetch JSON file\n\nERROR: %s", err.Error()))
 		return
 	}
 	fileName := fmt.Sprintf("./%d_export_tmp.json", m.Chat.ID)
 	if err = ioutil.WriteFile(fileName, export, 0644); err != nil {
 		zap.S().Errorw("failed to write file",
 			"error", err)
-		bot.Send(m.Chat, "⚠ 呜呜写入临时文件失败啦~ >_<\n"+err.Error())
+		bot.Send(m.Chat, "⚠️ Failed to write in temporary file\n"+err.Error())
 		return
 	}
 	exportFile := &tb.Document{
@@ -81,7 +81,7 @@ func bTask(m *tb.Message) {
 			return
 		}
 	}
-	bot.Send(m.Chat, "⚠ 只有我的主人@andatoshiki和@chenskiro才有可以让我干这样涩涩的事哦!x_x")
+	bot.Send(m.Chat, "⚠ Only users granted with admin rights could perform this operation")
 }
 func bLog(m *tb.Message) {
 	flag := 0
@@ -91,7 +91,7 @@ func bLog(m *tb.Message) {
 		}
 	}
 	if flag == 0 {
-		bot.Send(m.Chat, "⚠ 只有我的主人@andatoshiki和@chenskiro才有可以让我干这样涩涩的事哦~你这样我会很困扰的!x_x")
+		bot.Send(m.Chat, "⚠ Only users granted with admin rights could perform this operation")
 		return
 	}
 	file := config.LogBasePath + "latest.log"
