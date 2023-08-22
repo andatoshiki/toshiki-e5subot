@@ -5,9 +5,6 @@ builds:
   - env:
       - CGO_ENABLED=0
     ldflags: -s -w
-    hooks:
-      post:
-        - upx --best "{{ .Path }}"
     goos:
       - linux
       - windows
@@ -34,30 +31,46 @@ builds:
 checksum:
   name_template: '{{ .ProjectName }}_checksums.txt'
 archives:
-  # - name_template: >-
-  #     {{ .ProjectName }}_
-  #     {{- title .Os }}_
-  #     {{- if eq .Arch "amd64" }}64bit
-  #     {{- else if eq .Arch "386" }}32bit
-  #     {{- else }}{{ .Arch }}{{ end }}
-  - name_template: '{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}'
-    # replacements:
-    #   darwin: Darwin
-    #   linux: Linux
-    #   windows: Windows
-    #   386: 32bit
-    #   amd64: 64bit
+  # - name_template: '{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}'
+  #   replacements:
+  #     darwin: Darwin
+  #     linux: Linux
+  #     windows: Windows
+  #     386: 32bit
+  #     amd64: 64bit
+  - name_template: >-
+      {{- .ProjectName }}_
+      {{- title .Os }}_
+      {{- if eq .Arch "amd64" }}64bit
+      {{- else if eq .Arch "386" }}32bit
+      {{- else }}{{ .Arch }}{{ end }}
+      {{- if .Arm }}v{{ .Arm }}{{ end -}}
     format_overrides:
       - goos: windows
         format: zip
     files:
+      # - README.md
       - config.yml.example
       - LICENSE
 snapshot:
   name_template: "{{ .Tag }}-next"
 changelog:
+  use: github
   sort: asc
-  filters:
-    exclude:
-      - '^docs:'
-      - '^test:'
+  groups:
+    - title: New Features
+      regexp: "^.*feat[(\\w)]*:+.*$"
+      order: 0
+    - title: 'Bug fixes'
+      regexp: "^.*fix[(\\w)]*:+.*$"
+      order: 1
+    - title: 'Documentation updates'
+      regexp: "^.*docs[(\\w)]*:+.*$"
+      order: 2
+    - title: 'Refactoring'
+      regexp: "^.*refactor[(\\w)]*:+.*$"
+      order: 3
+    - title: Others
+      order: 4
+release:
+  draft: true
