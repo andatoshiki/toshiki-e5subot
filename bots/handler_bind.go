@@ -16,12 +16,12 @@ import (
 
 func bBind(m *tb.Message) {
 	bot.Send(m.Chat,
-		"Please read the documentation during your binding process: [Click to view documentation](https://note.toshiki.dev/application/toshiki-e5subot)",
+		"Please read the documentation to assit you through during your binding process: [click to view documentation](https://note.toshiki.dev/application/toshiki-e5subot).",
 		tb.ModeMarkdown,
 	)
 
 	bot.Send(m.Chat,
-		"⚠ Please reply in the following format `client_id(space)client_secret`",
+		"Please reply in the following format `client_id(space)client_secret`",
 		&tb.SendOptions{ParseMode: tb.ModeMarkdown,
 			ReplyMarkup: &tb.ReplyMarkup{ForceReply: true}},
 	)
@@ -37,18 +37,18 @@ func bBind1(m *tb.Message) {
 	}
 	tmp := strings.Split(m.Text, " ")
 	if len(tmp) != 2 {
-		bot.Send(m.Chat, "⚠ Wrong format inputted")
+		bot.Send(m.Chat, "Wrong format inputted")
 		return
 	}
 	id := tmp[0]
 	secret := tmp[1]
 	bot.Send(m.Chat,
-		fmt.Sprintf("👉 Please authorize your account - [click to login for granting access](%s)", microsoft.GetAuthURL(id)),
+		fmt.Sprintf("Please authorize your account - [click to login for granting access](%s)", microsoft.GetAuthURL(id)),
 		tb.ModeMarkdown,
 	)
 
 	bot.Send(m.Chat,
-		"⚠ Please reply the full fallback back url from your address bar with format of `http://localhost/......(space)alias` for convenient management purposes",
+		"Please reply and paste the full fallback back url from your address bar with format of `http://localhost/......(space)alias` for convenient management purposes",
 		&tb.SendOptions{ParseMode: tb.ModeMarkdown,
 			ReplyMarkup: &tb.ReplyMarkup{ForceReply: true},
 		},
@@ -60,18 +60,18 @@ func bBind1(m *tb.Message) {
 
 func bBind2(m *tb.Message) {
 	if !m.IsReply() {
-		bot.Send(m.Chat, "⚠ Wrong format inputted")
+		bot.Send(m.Chat, "Wrong format inputted")
 		return
 	}
 	if len(srv_client.GetClients(m.Chat.ID)) == config.BindMaxNum {
-		bot.Send(m.Chat, "⚠ You have reached the maximum accoutn binding limits, please consider remove exesscive or any unused accounts to contiue a new bind")
+		bot.Send(m.Chat, "You have reached the maximum accoutn binding limits, please consider remove exesscive or any unused accounts to contiue a new bind")
 		return
 	}
-	bot.Send(m.Chat, "⚠ Account binding in process, please standy by for a bot response...")
+	bot.Send(m.Chat, "Account binding in process, please standy by for a bot response...")
 
 	tmp := strings.Split(m.Text, " ")
 	if len(tmp) != 2 {
-		bot.Send(m.Chat, "⚠ Wrong format inputted")
+		bot.Send(m.Chat, "Wrong format inputted")
 	}
 	code := util.GetURLValue(tmp[0], "code")
 	alias := tmp[1]
@@ -84,7 +84,7 @@ func bBind2(m *tb.Message) {
 		bot.Send(m.Chat, fmt.Sprintf("Failed to fetch a ResponseToken, please restart the binding process ERROR:%s", err))
 		return
 	}
-	bot.Send(m.Chat, "🎉 Successfully obtained RefreshToken, congratulations")
+	bot.Send(m.Chat, "Successfully obtained RefreshToken, congratulations")
 
 	refresh, info, err := microsoft.GetUserInfo(id, secret, refresh)
 	if err != nil {
@@ -102,7 +102,7 @@ func bBind2(m *tb.Message) {
 	}
 
 	if srv_client.IsExist(c.TgId, c.ClientId) {
-		bot.Send(m.Chat, "⚠ This certain application or account is already successfully bound to the bot, failed to rebind")
+		bot.Send(m.Chat, "This certain application or account is already successfully bound to the bot, failed to rebind")
 		return
 	}
 
@@ -115,11 +115,11 @@ func bBind2(m *tb.Message) {
 	)
 
 	if err = srv_client.Add(c); err != nil {
-		bot.Send(m.Chat, "⚠ Failed write user data into database")
+		bot.Send(m.Chat, "Failed write user data into database")
 		return
 	}
 
-	bot.Send(m.Chat, "✨ Congratulations, account bound successfully; happy using!")
+	bot.Send(m.Chat, "Congratulations, account bound successfully, happy using!")
 	delete(UserStatus, m.Chat.ID)
 	delete(UserClientId, m.Chat.ID)
 	delete(UserClientSecret, m.Chat.ID)
@@ -140,7 +140,7 @@ func bUnBind(m *tb.Message) {
 	}
 
 	bot.Send(m.Chat,
-		fmt.Sprintf("⚠ Please select an account ot unbind\n\nCurrent bound accounts: %d/%d", len(srv_client.GetClients(m.Chat.ID)), config.BindMaxNum),
+		fmt.Sprintf("⚠ Please select an account ot unbind\n\nOwned account counts: %d/%d", len(srv_client.GetClients(m.Chat.ID)), config.BindMaxNum),
 		&tb.ReplyMarkup{InlineKeyboard: inlineKeys},
 	)
 }
@@ -151,9 +151,9 @@ func bUnBindInlineBtn(c *tb.Callback) {
 			"error", err,
 			"id", c.Data,
 		)
-		bot.Send(c.Message.Chat, "⚠ Failed to unbind, please recheck your configuration")
+		bot.Send(c.Message.Chat, "Failed to unbind, please recheck your configuration")
 		return
 	}
-	bot.Send(c.Message.Chat, "✨ Successfully unbind, you are welcomed to reuse the bot at anytime in future again")
+	bot.Send(c.Message.Chat, "Successfully unbind, you are welcomed to reuse the bot at anytime in future again")
 	bot.Respond(c)
 }

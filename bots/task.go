@@ -83,7 +83,7 @@ func adminSummary(errClients []*ErrClient, timeSpending float64) {
 	}
 	for _, admin := range config.Admins {
 		a := admin
-		msgSender.SendMessageByID(a, fmt.Sprintf("Task completed - Task Feedback(admins only notification)\nTime of Completion: %s\nTime taken: %.2fs\nResults: %d/%d\nAccount(s) failed: \n%s\nAccount(s) unbound: \n%s",
+		msgSender.SendMessageByID(a, fmt.Sprintf("Task execution completed - Task completion feedback (admins only notification)\nTime of Completion: %s\nTime taken: %.2fs\nResults: %d/%d\nAccount(s) failed: \n%s\nAccount(s) unbound: \n%s",
 			time.Now().Format("2006-01-02 15:04:05"),
 			timeSpending,
 			Count-ErrCount, Count,
@@ -111,7 +111,7 @@ func usersSummary(errClients []*ErrClient) {
 			}
 
 			unbindUsers = append(unbindUsers, errClient.TgId)
-					// your account has been automatically unbound because it has reached the maximum error limit of the bot
+			// your account has been automatically unbound because it has reached the maximum error limit of the bot
 			msgSender.SendMessageByID(errClient.TgId, fmt.Sprintf("your account has been automatically unbound because it has reached the maximum error limit of the bot\nSee you later\n\nAlias: %s\nclient_id: %s\nclient_secret: %s",
 				errClient.Alias,
 				errClient.ClientId,
