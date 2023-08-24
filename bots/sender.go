@@ -37,7 +37,7 @@ func (s *Sender) Init(goroutine int) {
 func (s *Sender) Stop() {
 	s.wg.Wait()
 	close(s.done)
-	fmt.Println("task finished")
+	fmt.Println("👉🏻 Task execution completed.")
 }
 
 func (s *Sender) SendMessageByID(ID int64, what interface{}, options ...interface{}) {

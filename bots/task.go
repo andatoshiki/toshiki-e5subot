@@ -2,6 +2,9 @@ package bots
 
 import (
 	"fmt"
+	"strconv"
+	"time"
+
 	"github.com/andatoshiki/toshiki-e5subot/config"
 	"github.com/andatoshiki/toshiki-e5subot/model"
 	"github.com/andatoshiki/toshiki-e5subot/pkg/microsoft"
@@ -9,8 +12,6 @@ import (
 	"github.com/robfig/cron/v3"
 	"go.uber.org/zap"
 	tb "gopkg.in/tucnak/telebot.v2"
-	"strconv"
-	"time"
 )
 
 type ErrClient struct {
@@ -83,7 +84,7 @@ func adminSummary(errClients []*ErrClient, timeSpending float64) {
 	}
 	for _, admin := range config.Admins {
 		a := admin
-		msgSender.SendMessageByID(a, fmt.Sprintf("Task execution completed - Task completion feedback (admins only notification)\nTime of Completion: %s\nTime taken: %.2fs\nResults: %d/%d\nAccount(s) failed: \n%s\nAccount(s) unbound: \n%s",
+		msgSender.SendMessageByID(a, fmt.Sprintf("⏳ Task execution requested by admins completed - completion feedback (administrative only details)\n🕐 Time of Completion: %s\n🕐 Time taken: %.2fs\n💾 Results: %d/%d\n❎ Account(s) failed counts: \n%s\n⭕️ Account(s) removed counts: \n%s",
 			time.Now().Format("2006-01-02 15:04:05"),
 			timeSpending,
 			Count-ErrCount, Count,
@@ -112,7 +113,7 @@ func usersSummary(errClients []*ErrClient) {
 
 			unbindUsers = append(unbindUsers, errClient.TgId)
 			// your account has been automatically unbound because it has reached the maximum error limit of the bot
-			msgSender.SendMessageByID(errClient.TgId, fmt.Sprintf("your account has been automatically unbound because it has reached the maximum error limit of the bot\nSee you later\n\nAlias: %s\nclient_id: %s\nclient_secret: %s",
+			msgSender.SendMessageByID(errClient.TgId, fmt.Sprintf("❎ Your account has been automatically susupended because it has reached the maximum error limit of the bot. \n\nAlias: %s\nclient_id: %s\nclient_secret: %s",
 				errClient.Alias,
 				errClient.ClientId,
 				errClient.ClientSecret,
@@ -126,7 +127,7 @@ func usersSummary(errClients []*ErrClient) {
 		signOK := len(srv_client.GetClients(errClient.TgId)) - signErr[errClient.TgId]
 
 		msgSender.SendMessageByID(errClient.TgId,
-			fmt.Sprintf("Task feedback\nTime taken: %s\nSucceeded accounts:%d/%d",
+			fmt.Sprintf("⏳ Task feedback\nTime taken: %s\n✅ Succeeded accounts counts:%d/%d",
 				time.Now().Format("2006-01-02 15:04:05"),
 				signOK,
 				signErr[errClient.TgId]+signOK,
@@ -140,11 +141,11 @@ func opErrorSign(errClient *ErrClient) {
 	errorTimes[errClient.ID]++
 	signErr[errClient.TgId]++
 
-	UnBindBtn := tb.InlineButton{Unique: "un" + errClient.MsId, Text: "Click to unbind", Data: strconv.Itoa(errClient.ID)}
+	UnBindBtn := tb.InlineButton{Unique: "un" + errClient.MsId, Text: "👉🏻 Click to unbind", Data: strconv.Itoa(errClient.ID)}
 	bot.Handle(&UnBindBtn, bUnBindInlineBtn)
 
 	msgSender.SendMessageByID(errClient.TgId,
-		fmt.Sprintf("Your accounts %s was found to encounter an operational error during API calling\nYou can choose to unbind or unlink the account profile\nError: %s",
+		fmt.Sprintf("❎ Bot throws %s  at least one operational error to one of your account profiles during API invocation. \nYou can choose to unbind the account profile or link a new account to the bot.\nError: %s",
 			errClient.Alias, errClient.Err),
 		&tb.ReplyMarkup{InlineKeyboard: [][]tb.InlineButton{{UnBindBtn}}},
 	)

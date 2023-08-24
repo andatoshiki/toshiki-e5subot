@@ -41,14 +41,14 @@ func bMy(m *tb.Message) {
 	}
 
 	bot.Send(m.Chat,
-		fmt.Sprintf("✨ Please selet an account to view the detailed information\n\nCurrently bound accounts: %d/%d", len(srv_client.GetClients(m.Chat.ID)), config.BindMaxNum),
+		fmt.Sprintf("👉🏻 Please selet an account profile to view information details\n\nOwned account counts: %d/%d", len(srv_client.GetClients(m.Chat.ID)), config.BindMaxNum),
 		&tb.ReplyMarkup{InlineKeyboard: inlineKeys})
 }
 func bMyInlineBtn(c *tb.Callback) {
 	id, _ := strconv.Atoi(c.Data)
 	client, err := srv_client.GetClient(id)
 	if err != nil {
-		bot.Send(c.Message.Chat, "Failed to fetch account information details")
+		bot.Send(c.Message.Chat, "❎ Failed to fetch account information details")
 		return
 	}
 	bot.Send(c.Message.Chat,
@@ -70,6 +70,6 @@ func bOnText(m *tb.Message) {
 	case StatusBind2:
 		bBind2(m)
 	default:
-		bot.Send(m.Chat, "✨ Send /help to view help information")
+		bot.Send(m.Chat, "❓ Send /help to view list of commands and bot descriptions.")
 	}
 }
