@@ -43,7 +43,7 @@ func bBind1(m *tb.Message) {
 	id := tmp[0]
 	secret := tmp[1]
 	bot.Send(m.Chat,
-		fmt.Sprintf("👉🏻 Please authorize to grant operational access rights for the bot to execute  - [click to login to Microsoft for application registration](%s)", microsoft.GetAuthURL(id)),
+		fmt.Sprintf("👉🏻 Please authorize to grant operational access rights for the bot to execute  - [click to login to Microsoft for application authentication](%s)", microsoft.GetAuthURL(id)),
 		tb.ModeMarkdown,
 	)
 
